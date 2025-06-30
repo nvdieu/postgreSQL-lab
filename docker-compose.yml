@@ -1,14 +1,19 @@
-version: '3.8'
+version: '3.8' # Phiên bản Docker Compose syntax
 
 services:
-  postgres:
-    image: postgres:15
-    container_name: pg_lab_postgres
+  db: # Tên dịch vụ của bạn (có thể là postgres, mydb,...)
+    image: postgres:16 # Sử dụng Docker image chính thức của PostgreSQL 16
+    container_name: my_postgres_db # Tên container để dễ quản lý
     environment:
-      POSTGRES_USER: admin
-      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: mydb        # Tên database mặc định được tạo
+      POSTGRES_USER: admin          # Username mặc định
+      POSTGRES_PASSWORD: 1234  # Mật khẩu mặc định (nên đổi khi dùng thực tế)
     ports:
-      - "5432:5432"
+      - "5432:5432" # Ánh xạ cổng: host_port:container_port
+                    # Nghĩa là bạn có thể kết nối từ localhost:5432
     volumes:
-      - ./pgdata:/var/lib/postgresql/data
+      - db_data:/var/lib/postgresql/data # Lưu dữ liệu database bền vững vào named volume 'db_data'
+
+volumes:
+  db_data: # Định nghĩa named volume 'db_data'
 
