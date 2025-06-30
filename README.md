@@ -21,10 +21,15 @@ git clone : https://github.com/nvdieu/postgresql-lab.git
 ### b4: Khởi động PgAdmin 4
 
 Thêm kết nối PostgreSQL trong pgAdmin
+
     Tab Connection:
+    
         Host: postgres
+        
         Port: 5432
+        
         Username: admin
+        
         Password: 1234
 
 ### b5 Dừng hệ thống
