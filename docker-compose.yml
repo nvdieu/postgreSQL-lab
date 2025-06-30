@@ -11,16 +11,4 @@ services:
       - "5432:5432"
     volumes:
       - ./pgdata:/var/lib/postgresql/data
-      - ./init:/docker-entrypoint-initdb.d
-  pgadmin:
-    image: dpage/pgadmin4
-    container_name: pg_lab_pgadmin
-    environment:
-      PGADMIN_DEFAULT_EMAIL: admin@binhbat.ai
-      PGADMIN_DEFAULT_PASSWORD: 1234
-    ports:
-      - "5050:80"
-    volumes:
-      - ./pgadmin-data:/var/lib/pgadmin
-    depends_on:
-      - postgres
+
