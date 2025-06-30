@@ -3,8 +3,8 @@ services:
     image: postgres:16
     container_name: my_postgres_db
     environment:
-      POSTGRES_DB: mydb        # This is your database name
-      POSTGRES_USER: nvdieu          # <--- THIS IS YOUR USERNAME
+      POSTGRES_DB: postgres        # This is your database name
+      POSTGRES_USER: admin          # <--- THIS IS YOUR USERNAME
       POSTGRES_PASSWORD: 1234  # <--- THIS IS YOUR PASSWORD
     ports:
       - "5432:5432"
